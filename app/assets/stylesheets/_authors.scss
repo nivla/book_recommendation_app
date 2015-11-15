@@ -1,0 +1,9 @@
+.author__name {
+  font-size: 1.5em;
+}
+
+.author__books {
+  @include display(flex);
+  @include border-color(null null #CCCCCC null);
+  @include border-style(null null solid null);
+}

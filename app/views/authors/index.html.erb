@@ -1,0 +1,10 @@
+<% @authors.each do |author| %>
+  <div class='author__name'><%= author.full_name %></div>
+  <div class='author__books'>
+    <% author.popular_books.each do |book| %>
+      <div class='author__book'>
+        <%= image_tag(book.cover_image,width:'150') %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
