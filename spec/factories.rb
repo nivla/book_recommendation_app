@@ -1,25 +1,30 @@
-FactoryGirl.define do  factory :list_entry do
-    list_id 1
-book_id 1
-  end
-  factory :list do
-    name "MyString"
-  end
-  factory :book do
-    title "MyString"
-cover_image "MyString"
-summary "MyText"
-genre_id 1
-author_id 1
-  end
-  factory :genre do
-    name "MyString"
-  end
-  factory :author do
-    full_name "MyString"
-picture "MyString"
-gender "MyString"
-born "MyString"
+FactoryGirl.define do
+  factory :list_entry do
+    list
+    book
   end
 
+  factory :list do
+    name "Best Horrors Movies"
+  end
+
+  factory :book do
+    title "MyString"
+    cover_image "MyString"
+    summary "MyText"
+    genre
+    author
+  end
+
+  factory :genre do
+    name "Horror"
+  end
+
+  factory :author do
+    full_name "Stephen King"
+    picture "MyString"
+    gender "MyString"
+    born "MyString"
+    bio "Author Bio"
+  end
 end

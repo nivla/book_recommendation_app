@@ -11,7 +11,7 @@ describe Author, type: :model do
   describe "#popular_books" do
     it "show 5 of his books" do
       author = create(:author)
-      create_list(:book, 6, author: author)
+      create_list(:book, 6, author: author, genre: create(:genre))
       expect(author.popular_books.count).to eq 5
     end
   end
