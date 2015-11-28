@@ -1,0 +1,48 @@
+<div class="author-page">
+  <div class="author-cover">
+    <%= image_tag(@author.picture)%> 
+  </div>
+
+  <div class="author-info">
+    <div class="author author__name">
+      <%= @author.full_name %>
+    </div>
+
+    <div class="author author__gender">
+      <span>gender:</span>
+      <p><%= @author.gender %></p>
+    </div>
+
+    <div class="author author__born">
+      <span>Born:</span>
+      <p><%= @author.born %><p>
+    </div>
+
+    <div class="author author__bio">
+      <span>About this author:</span>
+      <p><%= @author.bio %></p>
+    </div>
+  </div>
+
+  <ul class="books">
+    <%= @author.full_name %> books
+    <% @author.books.each do |book| %>
+      <li class="book">
+        <div class="cover_image">
+          <%= image_tag(book.cover_image,width:128)%>
+        </div>
+        <div class="book-details">
+          <div class="book__title">
+            <%= book.title %>
+          </div>
+          <div class="book__genre">
+            <%= book.genre.name %>
+          </div>
+          <div class="book_summary">
+            <%= book.summary %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>

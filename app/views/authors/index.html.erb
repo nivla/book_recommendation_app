@@ -1,5 +1,5 @@
 <% @authors.each do |author| %>
-  <div class='author__name'><%= author.full_name %></div>
+  <div class='author__name'><%= link_to(author.full_name, author) %></div>
   <div class='author__books'>
     <% author.popular_books.each do |book| %>
       <div class='author__book'>

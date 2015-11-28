@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :authors, only: [:index]
+  resources :authors, only: [:index, :show]
 end
