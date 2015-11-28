@@ -27,9 +27,9 @@ Book.create!([{
   summary: "Simon, Jane, and Barney, enlisted by their mysterious great-uncle,
   arrive in a small coastal town to recover a priceless golden grail stolen by
   the forces of evil -- Dark.",
-  cover_image: "https://d.gr-assets.com/books/1368431585l/24963.jpg",
+  cover_image: "https://d.gr-assets.com/books/1353277730l/11588.c://d.gr-assets.com/books/1368431585l/24963.jpg",
   author: Author.first,
-  genre: Genre.first
+  genre_id: 2
 }, {
   title: "The Shining",
   summary: "Danny was only five years old but in the words of old Mr Halloran
@@ -37,7 +37,7 @@ Book.create!([{
   caretaker of the Overlook Hotel his visions grew frighteningly out of control.",
   cover_image: "https://d.gr-assets.com/books/1353277730l/11588.jpg",
   author: Author.second,
-  genre: Genre.second
+  genre_id: 1
 }, {
   title: "It",
   summary: "To the children, the town was their whole world. To the adults,
@@ -45,5 +45,5 @@ Book.create!([{
   well-ordered for the most part. A good place to live.",
   cover_image: "https://d.gr-assets.com/books/1334416842l/830502.jpg",
   author: Author.second,
-  genre: Genre.first
+  genre_id: 1
 }])
