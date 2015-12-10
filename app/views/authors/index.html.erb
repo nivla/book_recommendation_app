@@ -1,9 +1,9 @@
 <% @authors.each do |author| %>
-  <div class='author__name'><%= link_to(author.full_name, author) %></div>
-  <div class='author__books'>
+  <div class="author__name"><%= link_to(author.full_name, author) %></div>
+  <div class="books">
     <% author.popular_books.each do |book| %>
-      <div class='author__book'>
-        <%= image_tag(book.cover_image,width:'150') %>
+      <div class="author__book">
+        <%= image_tag(book.cover_image, width: "150") %>
       </div>
     <% end %>
   </div>

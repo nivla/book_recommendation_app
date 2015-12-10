@@ -13,12 +13,12 @@ feature "user views author page" do
 
   scenario "can see all his books" do
     author = create(:author)
-    genre = create(:genre, name: "Horror")
-    create_list(:book, 3, author: author, genre: genre)
+    horror = create(:genre, name: "Horror")
+    create_list(:book, 3, author: author, genre: horror)
 
     visit author_path(author)
 
-    expect(page).to have_css(".books li", count: 3)
+    expect(page).to have_css(".author__books li", count: 3)
   end
 
   def have_author_picture(author)

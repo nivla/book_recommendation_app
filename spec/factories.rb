@@ -9,7 +9,7 @@ FactoryGirl.define do
   end
 
   factory :book do
-    title "MyString"
+    sequence(:title) { |n| "Book #{n}" }
     cover_image "MyString"
     summary "MyText"
     genre
@@ -17,11 +17,11 @@ FactoryGirl.define do
   end
 
   factory :genre do
-    name "Horror"
+    sequence(:name) { |n| "Categorie #{n}" }
   end
 
   factory :author do
-    full_name "Stephen King"
+    sequence(:full_name) { |n| "Author #{n}" }
     picture "MyString"
     gender "MyString"
     born "MyString"

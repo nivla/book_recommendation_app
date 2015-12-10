@@ -1,0 +1,16 @@
+<li class="author__book">
+  <div class="cover_image">
+    <%= image_tag(book.cover_image, width: 128)%>
+  </div>
+  <div class="book-details">
+    <div class="book__title">
+      <%= book.title %>
+    </div>
+    <div class="book__genre">
+      <%= book.genre.name %>
+    </div>
+    <div class="book_summary">
+      <%= book.summary %>
+    </div>
+  </div>
+</li>

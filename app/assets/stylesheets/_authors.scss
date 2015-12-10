@@ -2,10 +2,11 @@
   font-size: $base-title-size;
 }
 
-.author__books {
+.books {
   @include border-color(null null $base-secondary-color null);
   @include border-style(null null solid null);
   @include display(flex);
+  @include justify-content(space-around);
 }
 
 .author-cover {
@@ -21,24 +22,22 @@
   }
 }
 
-.author-page {
-  .books {
-    @include shift(4);
-    clear: left;
-  }
+.author__books {
+  @include shift(4);
+  clear: left;
+}
 
-  .book {
-    @include fill-parent();
-    @include row(table);
-  }
+.author_book {
+  @include fill-parent();
+  @include row(table);
+}
 
-  .cover_image {
-    @include span-columns(2);
-  }
+.cover_image {
+  @include span-columns(2);
+}
 
-  .book-details {
-    @include span-columns(8);
-    vertical-align: top;
-  }
+.book-details {
+  @include span-columns(8);
+  vertical-align: top;
 }
 

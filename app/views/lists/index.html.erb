@@ -1,0 +1,8 @@
+<% @lists.each do |list| %>
+  <h1><%= list.name %></h1>
+  <ul class="books">
+    <%= render partial: "books/book_preview",
+      collection: list.ranking_books, as: :book
+    %> 
+  </ul>
+<% end %>
