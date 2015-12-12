@@ -1,8 +1,8 @@
 <% @lists.each do |list| %>
-  <h1><%= list.name %></h1>
-  <ul class="books">
+  <h1><%= link_to(list.name, list_path(list)) %></h1>
+  <ul class="books books-horizontal">
     <%= render partial: "books/book_preview",
       collection: list.ranking_books, as: :book
-    %> 
+    %>
   </ul>
 <% end %>

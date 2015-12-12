@@ -2,7 +2,7 @@
   font-size: $base-title-size;
 }
 
-.books {
+.books-horizontal {
   @include border-color(null null $base-secondary-color null);
   @include border-style(null null solid null);
   @include display(flex);
@@ -26,18 +26,3 @@
   @include shift(4);
   clear: left;
 }
-
-.author_book {
-  @include fill-parent();
-  @include row(table);
-}
-
-.cover_image {
-  @include span-columns(2);
-}
-
-.book-details {
-  @include span-columns(8);
-  vertical-align: top;
-}
-

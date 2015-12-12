@@ -1,4 +1,9 @@
+
 .book {
+  @include fill-parent();
+}
+
+.book-category {
   width: $base-book-width;
 }
 
@@ -9,4 +14,13 @@
 
 .book__genre {
   font-style: italic;
+}
+
+.cover_image {
+  @include span-columns(2);
+}
+
+.book-details {
+  @include span-columns(8);
+  vertical-align: top;
 }

@@ -8,7 +8,7 @@ feature "normal or guess user watching authors page" do
     visit authors_path
 
     expect(page).to have_content stephen.full_name
-    expect(page).to have_css(".author__book", count: 5)
+    expect(page).to have_css(".book", count: 5)
   end
 end
 
