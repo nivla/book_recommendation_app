@@ -1,0 +1,12 @@
+<div class="filters">
+  <ul class="genres">
+    <h1>Genres</h1>
+    <% @book_service.genres.each do |genre| %>
+      <li> <%= link_to(genre.name, genre_path(genre))%> </li>    
+    <% end %>
+  </ul>
+</div>
+
+<ul>
+  <%= render @book_service.books %>
+</ul>

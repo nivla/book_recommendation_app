@@ -9,4 +9,17 @@ describe Book, type: :model do
   it { should validate_presence_of(:summary) }
   it { should validate_presence_of(:author_id)}
   it { should validate_presence_of(:genre_id)}
+
+  describe "#by_genre" do
+    it "list all books belongs to a specific genre" do
+      romance = create(:genre, name: "Romance")
+      horror = create(:genre, name: "Horror")
+      create(:book, title: "The it", genre: romance)
+      create(:book, title: "Rollling deep", genre: horror)
+
+      books = Book.by_genre(romance)
+
+      expect(books.map(&:title)).to eq ["The it"]
+    end
+  end
 end

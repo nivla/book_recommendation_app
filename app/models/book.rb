@@ -7,4 +7,8 @@ class Book < ActiveRecord::Base
   validates :summary, presence: true
   validates :author_id, presence: true
   validates :genre_id, presence: true
+
+  def self.by_genre(genre)
+    where("genre_id = ? ", genre)
+  end
 end
