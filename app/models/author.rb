@@ -1,4 +1,7 @@
 class Author < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :full_name, use: [:slugged, :finders]
+
   has_many :books,dependent: :destroy
 
   validates :full_name, presence: true, uniqueness: true

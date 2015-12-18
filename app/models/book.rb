@@ -1,4 +1,7 @@
 class Book < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :finders]
+
   belongs_to :author
   belongs_to :genre
 

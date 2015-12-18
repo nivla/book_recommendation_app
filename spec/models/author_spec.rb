@@ -15,4 +15,14 @@ describe Author, type: :model do
       expect(author.popular_books.count).to eq 5
     end
   end
+
+  describe "#find" do
+    it "should find author buy slug name" do
+      author = create(:author, full_name: "Stephen King")
+
+      result = Author.find("stephen-king")
+
+      expect(result).to eq author
+    end
+  end
 end

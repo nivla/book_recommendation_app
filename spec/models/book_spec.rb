@@ -22,4 +22,14 @@ describe Book, type: :model do
       expect(books.map(&:title)).to eq ["The it"]
     end
   end
+
+  describe "#find" do
+    it "should find a book by slug title" do
+      book = create(:book, title: 'The book')
+
+      result = Book.find("the-book")
+
+      expect(result).to eq book
+    end
+  end
 end
