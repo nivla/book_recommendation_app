@@ -1,0 +1,27 @@
+<header>
+  <div class="wrap">
+    <div id="logo">
+      <%= link_to root_path do %>
+        <%= image_tag "logo.png",width: 64, height: 64 %>
+      <% end %>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <%= link_to("Books", books_path) %>
+      </li>
+      <li>
+        <%= link_to("Lists", lists_path) %>
+      </li>
+      <li>
+        <%= link_to("Authors", authors_path) %>
+      </li>
+      <li>
+        <% if user_signed_in? %>
+          <%= link_to "Logout", session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Login", new_session_path %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</header>

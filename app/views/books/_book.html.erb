@@ -4,7 +4,7 @@
   </div>
   <div class="book-details">
     <div class="book__title">
-      <%= book.title %>
+      <%= link_to(book.title, book_path(book)) %>
     </div>
     <div class="book__genre">
       <%= book.genre.name %>

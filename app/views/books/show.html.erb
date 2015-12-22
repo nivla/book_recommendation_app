@@ -1,0 +1,22 @@
+<div>
+  <div class="book">
+    <div class="cover_image">
+      <%= image_tag @book.cover_image, width: 150, height: 250 %>
+    </div>
+    <div class="book-details">
+      <div class="book__title">
+        <%= @book.title %>
+      </div>
+      <div class="by_author">
+        <%= "by #{@book.author.full_name}" %>
+      </div>
+      <div class="book_summary">
+        <%= @book.summary %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="reviews">
+  Reviews
+</div>

@@ -32,4 +32,15 @@ describe Book, type: :model do
       expect(result).to eq book
     end
   end
+
+  describe "#lastest_published" do
+    it "return lastest books published" do
+      book = create(:book, created_at: 1.hour.ago)
+      book2 = create(:book, created_at: 1.minute.ago)
+
+      lastest_published = Book.lastest_published
+
+      expect(lastest_published).to eq [book2, book]
+    end
+  end
 end

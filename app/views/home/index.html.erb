@@ -1,0 +1,24 @@
+<div class="left-column">
+  <div class="box">
+    <h2 class="box-title">What will you discover?</h2>
+    <ul class="lastest-books">
+      <% books.each do |book| %>
+        <li>
+          <%= image_tag book.cover_image, width: 80, height: 120 %>
+        </li>
+      <% end %>
+    </ul>
+    <div class="box-footer">
+    </div>
+  </div>
+</div>
+<div class="right-column">
+  <h2>Best Authors</h1>
+  <ul class="best-authors">
+    <% authors.each do |author| %>
+      <li>
+        <%= link_to author.full_name, author_path(author) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

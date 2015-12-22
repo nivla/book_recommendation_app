@@ -1,0 +1,12 @@
+<%= simple_form_for :session, url: session_path  do |f| %>
+  <%= f.input :email, label: "Email" %>
+  <%= f.input :password, password: "Password" %>
+
+  <%= f.submit "Sign in" %>
+  <div class="shared_links">
+    Not have an account?
+    <%= link_to "Sign up here", new_registration_path %>
+  </div>
+<% end %>
+
+

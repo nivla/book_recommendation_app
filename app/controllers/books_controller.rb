@@ -4,4 +4,10 @@ class BooksController < ApplicationController
       books: Book.all
     )
   end
+
+  def show
+    @book = Book.includes(:author)
+      .joins(:author)
+      .find(params[:id])
+  end
 end

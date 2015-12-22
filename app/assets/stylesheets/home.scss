@@ -1,0 +1,68 @@
+.home {
+  .left-column {
+    @include span-columns(10);
+    margin-top:20px;
+  }
+  .right-column {
+    @include span-columns(2);
+    margin-top:20px;
+
+    h2 {
+      @include padding(20px);
+    }
+
+    li {
+      @include padding(20px);
+      border-bottom: 1px solid #EBECE7;
+    }
+  }
+
+  .lastest-books {
+    @include display(flex);
+    @include justify-content(space-around);
+    li {
+      z-index: 1;
+    }
+  }
+
+  .box {
+    @include border-left-radius(15px);
+    @include border-right-radius(15px);
+    position: relative;
+    background-color: #ABE3C0;
+    .box-title {
+      padding: 20px;
+      font-style: italic;
+    }
+
+    .box-footer {
+      display: block;
+      background-color: #4D785D;
+      height: 30px;
+      position: absolute;
+      bottom: 1px;
+      width: 100%;
+    }
+  }
+}
+
+.explore {
+  @include padding(40px 0px 40px 0px);
+  background-color: #449662;
+  color: white;
+
+  button {
+    @include button(simple, white);
+    @include padding(20px);
+  }
+
+  .text-message {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  p {
+    @include padding(20px 0px 20px 0px);
+    font-size: 20px;
+  }
+}

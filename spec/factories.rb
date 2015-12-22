@@ -1,4 +1,10 @@
 FactoryGirl.define do
+  factory :user do
+    name "Example user"
+    sequence(:email) {|n| "user#{n}@example.com"}
+    password "somepassword"
+  end
+
   factory :list_entry do
     list
     book
