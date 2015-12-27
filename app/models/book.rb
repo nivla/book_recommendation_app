@@ -14,4 +14,8 @@ class Book < ActiveRecord::Base
   def self.by_genre(genre)
     where("genre_id = ? ", genre)
   end
+
+  def self.lastest_published
+    order(created_at: :desc)
+  end
 end
