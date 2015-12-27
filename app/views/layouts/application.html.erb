@@ -14,6 +14,37 @@
   <%= csrf_meta_tags %>
   </head>
   <body class="<%= body_class %>">
+    <header>
+      <div class="wrap">
+        <ul class="user-links">
+          <li>
+            <a>. Login</a> 
+          </li>
+        </ul>
+        <ul class="nav-links">
+          <li>
+            <a>Books</a>
+          </li>
+          <li>
+            <a>List</a>
+          </li>
+          <li>
+            <a>Authors</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div class="explore">
+      <div class="wrap">
+        <div class="text-message">
+          <h1>discover what to read next?</h1>
+          <p>
+          You’re in the right place. Tell us what titles or genres you’ve enjoyed in the past, and we’ll give you surprisingly insightful recommendations.
+          </p>
+          <button>Explore Awesome Books</button>
+        </div>
+      </div>
+    </div>
     <%= render "flashes" -%>
     <div class='content'>
       <%= yield %>
