@@ -41,7 +41,6 @@ describe Book, type: :model do
       lastest_published = Book.lastest_published
 
       expect(lastest_published).to eq [book2, book]
-
     end
   end
 end

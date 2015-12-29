@@ -49,26 +49,6 @@ header {
   }
 }
 
-.explore {
-  @include padding(40px 0px 40px 0px);
-  background-color: #449662;
-  color: white;
 
-  button {
-    @include button(simple, white);
-    @include padding(20px);
-  }
-
-  .text-message {
-    text-align: center;
-    text-transform: uppercase;
-  }
-
-  p {
-    @include padding(20px 0px 20px 0px);
-    font-size: 20px;
-  }
-
-}
 
 

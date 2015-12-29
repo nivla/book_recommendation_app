@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="ROBOTS" content="NOODP" />
+    <meta name="viewport" content="initial-scale=1" />
+    <title><%= title %></title>
+    <%= stylesheet_link_tag :application, media: "all" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body class="<%= body_class %>">
+    <%= render "layouts/header" %>
+    <div class="explore">
+      <div class="wrap">
+        <div class="text-message">
+          <h1>discover what to read next?</h1>
+          <p>
+          You’re in the right place. Tell us what titles or genres you’ve enjoyed in the past, and we’ll give you surprisingly insightful recommendations.
+          </p>
+          <button>Explore Awesome Books</button>
+        </div>
+      </div>
+    </div>
+    <%= render "flashes" -%>
+    <div class='content home'>
+      <%= yield %>
+    </div>
+    <%= render "javascript" %>
+  </body>
+</html>
