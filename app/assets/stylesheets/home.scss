@@ -1,11 +1,15 @@
+
+$explore-background: #449662;
+$box-background: #abe3c0;
+$box-footer-background: #4d785d;
 .home {
   .left-column {
     @include span-columns(10);
-    margin-top:20px;
+    margin-top: 20px;
   }
   .right-column {
     @include span-columns(2);
-    margin-top:20px;
+    margin-top: 20px;
 
     h2 {
       @include padding(20px);
@@ -29,26 +33,27 @@
     @include border-left-radius(15px);
     @include border-right-radius(15px);
     position: relative;
-    background-color: #ABE3C0;
+    background-color: $box-background;
     .box-title {
       padding: 20px;
       font-style: italic;
     }
 
-    .box-footer {
-      display: block;
-      background-color: #4D785D;
-      height: 30px;
-      position: absolute;
-      bottom: 1px;
-      width: 100%;
-    }
+  }
+
+  .box-footer {
+    display: block;
+    background-color: $box-footer-background;
+    height: 30px;
+    position: absolute;
+    bottom: 1px;
+    width: 100%;
   }
 }
 
 .explore {
-  @include padding(40px 0px 40px 0px);
-  background-color: #449662;
+  @include padding(40px 0 40px 0);
+  background-color: $explore-background;
   color: white;
 
   button {
@@ -62,7 +67,7 @@
   }
 
   p {
-    @include padding(20px 0px 20px 0px);
+    @include padding(20px 0 20px 0);
     font-size: 20px;
   }
 }
