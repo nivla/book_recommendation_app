@@ -43,4 +43,18 @@ describe Book, type: :model do
       expect(lastest_published).to eq [book2, book]
     end
   end
+
+  describe "#reviewers" do
+    it "returns users who have written a review for the book" do
+      book = create(:book, title: "GreenWitch")
+      reviewer_1 = create(:user)
+      reviewer_2 = create(:user)
+      create(:review, book: book, user: reviewer_1)
+      create(:review, book: book, user: reviewer_2)
+
+      reviewers = book.reviewers
+
+      expect(reviewers).to eq [reviewer_1, reviewer_2]
+    end
+  end
 end

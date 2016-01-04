@@ -4,6 +4,7 @@ class Book < ActiveRecord::Base
 
   belongs_to :author
   belongs_to :genre
+  has_many :reviews
 
   validates :title, presence: true
   validates :cover_image, presence: true
@@ -17,5 +18,9 @@ class Book < ActiveRecord::Base
 
   def self.lastest_published
     order(created_at: :desc)
+  end
+
+  def reviewers
+    reviews.map(&:user)
   end
 end

@@ -1,0 +1,31 @@
+<div class="reviews">
+  <% if review_policy.authorized_for_review? %>
+    <%= simple_form_for [book, Review.new] do |f| %>
+      <%= f.input :score, collection: 1..5, as: :select, prompt: "**Select score**"%>
+      <%= f.input :content, label: "Review" %>
+      <%= f.submit "Send review" %>
+    <% end %>
+  <% elsif !review_policy.has_not_already_reviewer? %>
+    <div class="thanks_review">Thanks for review this book!.</div>
+  <% else %>
+    <%= link_to "log in or sign up for write a review", new_session_path %>
+  <% end %>
+  <h1>Reviews</h1>
+  <ul>
+    <% reviews.each do |review| %>
+      <li class="review">
+        <div class="review-image">
+          <%= gravatar_image_tag(review.user.email) %>
+        </div>
+        <div class="review-content">
+          <h1>
+            <%= review.user.name %> rated at
+            <span class="rated-<%= review.score %>"><%= review.score %></span>
+          </h1>
+          <p><%= review.content %></p>
+          <p class="review-detail"></p>
+        </div>
+      </li> 
+    <% end %>
+  </ul>
+</div>

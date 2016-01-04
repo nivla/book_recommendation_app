@@ -1,13 +1,23 @@
 require "rails_helper"
 
 feature "Watching book page" do
-  scenario "view a particular book" do
-    book = create(:book, title: "The It")
+  before(:each) do
+    @book = create(:book, title: "The It")
     visit books_path
+  end
 
-    click_link book.title
+  scenario "can see summary of a  book" do
+    click_link @book.title
+
+    expect(page).to have_content(@book.summary)
+  end
+
+  scenario "can see reviews of books if it have" do
+    create_list(:review, 3, book: @book)
+
+    click_link @book.title
 
     expect(page).to have_content("Reviews")
-    expect(page).to have_content(book.summary)
+    expect(page).to have_css("li.review", count: 3)
   end
 end

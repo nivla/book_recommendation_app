@@ -6,8 +6,14 @@ class BooksController < ApplicationController
   end
 
   def show
-    @book = Book.includes(:author)
+    book = Book.includes(:author, :reviews)
       .joins(:author)
       .find(params[:id])
+
+    render locals: {
+      book: book,
+      reviews: book.reviews,
+      review_policy: ReviewPolicy.new(book.reviewers, current_user)
+    }
   end
 end
