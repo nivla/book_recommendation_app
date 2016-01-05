@@ -56,7 +56,7 @@ $box-footer-background: #4d785d;
   background-color: $explore-background;
   color: white;
 
-  button {
+  .explore-button {
     @include button(simple, white);
     @include padding(20px);
   }

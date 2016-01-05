@@ -4,7 +4,9 @@
     <ul class="lastest-books">
       <% books.each do |book| %>
         <li>
-          <%= image_tag book.cover_image, width: 80, height: 120 %>
+          <%= link_to book_path book do %>
+            <% image_tag book.cover_image, width: 80, height: 120 %>
+          <% end %>
         </li>
       <% end %>
     </ul>
