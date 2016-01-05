@@ -1,15 +1,13 @@
 require_relative "../../app/policies/review_policy"
 
 RSpec.describe ReviewPolicy do
-
   describe "#authorize_for_review?" do
-
     it "returns true if user hasn't written a review yet" do
       reviewer = double("user", present?: true)
       reviews = []
 
-      valid_authorization = ReviewPolicy.new(reviews, reviewer)
-        .authorized_for_review?
+      valid_authorization = ReviewPolicy.new(reviews, reviewer).
+        authorized_for_review?
 
       expect(valid_authorization).to eq true
     end
@@ -18,8 +16,8 @@ RSpec.describe ReviewPolicy do
       reviewer = double("user", present?: false)
       reviews = []
 
-      valid_authorization = ReviewPolicy.new(reviews, reviewer)
-        .authorized_for_review?
+      valid_authorization = ReviewPolicy.new(reviews, reviewer).
+        authorized_for_review?
 
       expect(valid_authorization).to eq false
     end
@@ -28,8 +26,8 @@ RSpec.describe ReviewPolicy do
       reviewer = double("user", present?: true)
       reviews = [reviewer]
 
-      valid_authorization = ReviewPolicy.new(reviews, reviewer)
-        .authorized_for_review?
+      valid_authorization = ReviewPolicy.new(reviews, reviewer).
+        authorized_for_review?
 
       expect(valid_authorization).to eq false
     end

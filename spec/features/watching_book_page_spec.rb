@@ -13,7 +13,8 @@ feature "Watching book page" do
   end
 
   scenario "can see reviews of books if it have" do
-    create_list(:review, 3, book: @book)
+    user = create(:user)
+    create_list(:review, 3, book: @book, user: user)
 
     click_link @book.title
 

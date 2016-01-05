@@ -11,12 +11,12 @@ class ReviewsController < ApplicationController
   private
 
   def review_param
-    params.require(:review)
-      .permit(:score, :content)
-      .merge(book: book, user: current_user)
+    params.require(:review).
+      permit(:score, :content).
+      merge(book: book, user: current_user)
   end
 
   def book
-    @book ||=Book.find params[:book_id]
+    @book ||= Book.find params[:book_id]
   end
 end
