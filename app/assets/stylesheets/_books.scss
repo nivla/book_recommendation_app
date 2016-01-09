@@ -1,9 +1,22 @@
 $border-color: #E8E8E8;
 
+.filters{
+  @include span-columns(2);
+  .genres li {
+    @include padding(15px null 15px null);
+    border-bottom: 1px solid $border-color;
+  }
+}
+
+.books-list {
+  @include span-columns(10);
+}
+
 .book {
   @include outer-container;
   @include fill-parent();
 }
+
 
 .book-details > div {
   @include padding(15px null 15px null);

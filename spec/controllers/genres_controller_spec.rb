@@ -4,7 +4,8 @@ describe GenresController do
     it "filters all books by given genre" do
       horror = create(:genre)
       books = build_stubbed(:book)
-      allow(Book).to receive(:by_genre).and_return(books)
+      page = double(page: "")
+      allow(Book).to receive(:by_genre).and_return(page)
 
       get :show, id: horror
 
