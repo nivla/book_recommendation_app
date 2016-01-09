@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   def index
     @book_service = BookService.new(
-      books: Book.all
+      books: Book.page(params[:page])
     )
   end
 
