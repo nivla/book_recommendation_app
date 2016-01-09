@@ -1,5 +1,7 @@
 <li class="book book-category">
   <div> 
-    <%= image_tag(book.cover_image, width: 128)%>
+    <%= link_to book_path(book) do %>
+      <% image_tag(book.cover_image, width: 128) %>
+    <% end %>
   </div>
 </li>

@@ -1,8 +1,8 @@
-$border-color: #E8E8E8;
+$border-color: #e8e8e8;
 
-.filters{
+.filters {
   @include span-columns(2);
-  .genres li {
+  li {
     @include padding(15px null 15px null);
     border-bottom: 1px solid $border-color;
   }
@@ -33,13 +33,13 @@ $border-color: #E8E8E8;
 }
 
 .book-rating {
-  font-weight: bold;
-  text-align:center;
-  width: 48px;
-  background-image: image-url('star.png');
-  background-size: 48px;
-  background-repeat: no-repeat;
+  background-image: image-url("star.png");
   background-position: left-center;
+  background-repeat: no-repeat;
+  background-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  width: 48px;
 }
 .book-genre {
   font-style: italic;
