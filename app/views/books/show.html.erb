@@ -1,16 +1,19 @@
 <div>
   <div class="book">
-    <div class="cover_image">
+    <div class="cover-image">
       <%= image_tag book.cover_image, width: 150, height: 250 %>
     </div>
     <div class="book-details">
-      <div class="book__title">
+      <div class="book-title">
         <%= book.title %>
+      </div>
+      <div class="book-rating">
+        <%= book.average_rating %>
       </div>
       <div class="by_author">
         <%= "by #{book.author.full_name}" %>
       </div>
-      <div class="book_summary">
+      <div class="book-summary">
         <%= book.summary %>
       </div>
     </div>

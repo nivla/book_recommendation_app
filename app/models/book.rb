@@ -2,6 +2,8 @@ class Book < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: [:slugged, :finders]
 
+  NO_REVIEW_SCORE = 0.0
+
   belongs_to :author
   belongs_to :genre
   has_many :reviews
@@ -22,5 +24,13 @@ class Book < ActiveRecord::Base
 
   def reviewers
     reviews.map(&:user)
+  end
+
+  def average_rating
+    if reviews.any?
+      reviews.average(:score)
+    else
+      NO_REVIEW_SCORE
+    end
   end
 end

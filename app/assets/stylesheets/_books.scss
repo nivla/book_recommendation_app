@@ -1,22 +1,38 @@
+$border-color: #E8E8E8;
+
 .book {
   @include outer-container;
   @include fill-parent();
+}
+
+.book-details > div {
+  @include padding(15px null 15px null);
+  border-bottom: 1px solid $border-color;
 }
 
 .book-category {
   width: $base-book-width;
 }
 
-.book__title {
+.book-title {
   color: $base-secondary-color;
   font-size: $base-title-size;
 }
 
-.book__genre {
+.book-rating {
+  font-weight: bold;
+  text-align:center;
+  width: 48px;
+  background-image: image-url('star.png');
+  background-size: 48px;
+  background-repeat: no-repeat;
+  background-position: left-center;
+}
+.book-genre {
   font-style: italic;
 }
 
-.cover_image {
+.cover-image {
   @include span-columns(2);
 }
 

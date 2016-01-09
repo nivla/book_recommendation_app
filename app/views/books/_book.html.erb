@@ -1,15 +1,15 @@
 <li class="book">
-  <div class="cover_image">
+  <div class="cover-image">
     <%= image_tag(book.cover_image, width: 128)%>
   </div>
   <div class="book-details">
-    <div class="book__title">
+    <div class="book-title">
       <%= link_to(book.title, book_path(book)) %>
     </div>
-    <div class="book__genre">
+    <div class="book-genre">
       <%= book.genre.name %>
     </div>
-    <div class="book_summary">
+    <div class="book-summary">
       <%= book.summary %>
     </div>
   </div>

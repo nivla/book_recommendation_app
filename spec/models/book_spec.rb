@@ -57,4 +57,28 @@ describe Book, type: :model do
       expect(reviewers).to eq [reviewer_1, reviewer_2]
     end
   end
+
+  describe "#average_rating" do
+    context "with reviews" do
+      it "return books rating if have reviews" do
+        book = create(:book)
+        create(:review, score: 5, book: book)
+        create(:review, score: 4, book: book)
+
+        average_rating = book.average_rating
+
+        expect(average_rating).to eq 4.5
+      end
+    end
+
+    context "with no reviews" do
+      it "returns 0" do
+        book = create(:book)
+
+        average_rating = book.average_rating
+
+        expect(average_rating).to eq Book::NO_REVIEW_SCORE
+      end
+    end
+  end
 end
