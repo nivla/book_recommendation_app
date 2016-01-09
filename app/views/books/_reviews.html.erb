@@ -6,9 +6,11 @@
       <%= f.submit "Send review" %>
     <% end %>
   <% elsif !review_policy.has_not_already_reviewer? %>
-    <div class="thanks_review">Thanks for review this book!.</div>
+    <div class="flash-notice">Thanks for review this book!.</div>
   <% else %>
-    <%= link_to "log in or sign up for write a review", new_session_path %>
+    <div class="flash-notice">
+      <%= link_to "log in or sign up for write a review", new_session_path %>
+    </div>
   <% end %>
   <h1>Reviews</h1>
   <ul>
@@ -25,7 +27,7 @@
           <p><%= review.content %></p>
           <p class="review-detail"></p>
         </div>
-      </li> 
+      </li>
     <% end %>
   </ul>
 </div>
