@@ -1,5 +1,5 @@
 # Book recommendation
-[book-recommendation.herokuapp.com](book-recommendation.herokuapp.com)
+[book-recommendation.herokuapp.com](http://book-recommendation.herokuapp.com)
 ## Getting Started
 
 After you have cloned this repo, run this setup script to set up your machine
